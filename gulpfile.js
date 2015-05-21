@@ -7,21 +7,21 @@ var gulp = require('gulp'),
  
     // JS BUILD
     uglify = require('gulp-uglify'),
- 
-    // HTML
-  //  htmlmin = require('gulp-htmlmin'),
- 
-    // Browser sync
-
     // Exec
     exec = require('child_process').exec,
- 
+
+    // Publishing
+    s3 = require('gulp-s3');
+
     // Import files
     pkg = require('./package.json')
 ;
+var fs = require('fs');
 
 var browserSync = require('browser-sync').create();
 var reload = browserSync.reload;
+
+aws = JSON.parse(fs.readFileSync('./aws-staging.json'));
 
 gulp.task('jekyll-build', function (done) {
   browserSync.notify('<span style="color: grey">Running:</span> $ jekyll build');
@@ -64,6 +64,19 @@ gulp.task('compress-js', function() {
 gulp.task('jquery', function() {
     return gulp.src('bower_components/jquery/dist/jquery.min.js')
         .pipe(gulp.dest('_deploy/assets/js'));
+});
+
+gulp.task('publish-staging', ['jekyll'], function() {
+    var options = { headers: {'Cache-Control': 'max-age=5, no-transform, public'} }
+    return gulp.src('./_deploy/**')
+        .pipe(s3(aws, options));
+});
+
+gulp.task('publish-production', ['jekyll'], function() {
+    aws = JSON.parse(fs.readFileSync('./aws-production.json'));
+    var options = { headers: {'Cache-Control': 'max-age=5, no-transform, public'} }
+    return gulp.src('./_deploy/**')
+        .pipe(s3(aws, options));
 });
 
 gulp.task('default', ['jekyll'], function() {

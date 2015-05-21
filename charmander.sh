@@ -26,4 +26,12 @@ then
 	check_vagrant_status
 	(cd $DIR; vagrant ssh --command "cd /vagrant && gulp jekyll")
 	echo "Your built site is now located in _deploy!"
+elif [ "$1" == "publish" ];
+then
+	check_vagrant_status
+	if [ "$2" == "staging" ];
+	then
+		(cd $DIR; vagrant ssh --command "cd /vagrant && gulp publish-staging")
+		echo "Published to staging!"
+	fi
 fi
