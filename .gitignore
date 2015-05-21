@@ -10,3 +10,5 @@ _deploy
 
 # Mac Stuff
 .DS_Store
+
+aws-*.json
