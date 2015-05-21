@@ -1,11 +1,11 @@
 # Site settings
 
 # Title of the site
-title: "My awesome site"
-base_url: "http://charmander.charmander"
+title: "Every Kid in a Park"
+base_url: "http://ekip-staging.18f.gov"
 
 # Basic meta description for pages that don't have one specified
-description: "A basic, incredible site."
+description: "Every Kid in a Park Staging Site"
 
 # Replace with your Google Analytics ID, eg: UA-12345678-9
 google_analytics_id: ''
@@ -23,3 +23,5 @@ permalink: pretty
 
 source: app/
 destination: _deploy/
+
+ticket_generator_endpoint: http://192.168.19.16/ticket
