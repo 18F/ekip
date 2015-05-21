@@ -24,4 +24,4 @@ permalink: pretty
 source: app/
 destination: _deploy/
 
-ticket_generator_endpoint: http://192.168.19.16/ticket
+ticket_generator_endpoint: https://ekip-staging.18f.gov/ticket
