@@ -5,3 +5,13 @@
 .default-ul {
 	@extend %default-ul;
 }
+
+$color-base: #615B5D;
+$color-highlight-one: #87A581;
+$color-highlight-two: #5DBFE1;
+
+$color-sky: $color-highlight-two;
+$color-grass: $color-highlight-one;
+
+@import "base";
+@import "content";

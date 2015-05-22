@@ -85,7 +85,22 @@
 <![endif]-->
 {% endif %}
 
-{{ content }}
+<div class="sky">
+<header class="header">
+    <h1 class="header__title"><a href="/index.html">Every Kid in a Park</a></h1>
+    <nav class="header__nav">
+    <ul class="header__nav-list">
+        <li class="header__nav-list-item"><a href="#">Students</a></li>
+        <li class="header__nav-list-item"><a href="#">Teachers</a></li>
+        <li class="header__nav-list-item"><a href="#">About</a></li>
+    </ul>
+    </nav>
+</header>
+
+<div class="content">
+    {{ content }}
+</div>
+</div>
 
 {% if page.custom_js %}
 {% for js_file in page.custom_js %}

@@ -40,6 +40,10 @@ gulp.task('jekyll', ['jekyll-build'], function() {
     gulp.src('bower_components/jquery/dist/jquery.min.js')
         .pipe(gulp.dest('_deploy/assets/js'));
 
+    gulp.src('assets/img/*')
+        .pipe(gulp.dest('_deploy/assets/img'))
+        .pipe(reload({stream:true}));
+
     return gulp.src('assets/scss/*.scss')
         .pipe(sass())
         .pipe(gulp.dest('_deploy/assets/css'))
@@ -48,9 +52,15 @@ gulp.task('jekyll', ['jekyll-build'], function() {
 
 
 gulp.task('scss', function() {
-    gulp.src('assets/scss/*.scss')
+    return gulp.src('assets/scss/*.scss')
         .pipe(sass())
         .pipe(gulp.dest('_deploy/assets/css'))
+        .pipe(reload({stream:true}));
+});
+
+gulp.task('images', function() {
+    return gulp.src('assets/img/*')
+        .pipe(gulp.dest('_deploy/assets/img'))
         .pipe(reload({stream:true}));
 });
 
