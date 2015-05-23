@@ -6,9 +6,11 @@ Charmander is a simple template for producing Jekyll static sites using Vagrant,
 
 ## Getting Started
 
-1. Clone this repository locally
+1. Clone this repository locally.
 2. Ensure you have [Vagrant](https://www.vagrantup.com/) installed.
-3. From the directory you've cloned this repository in to, run `sh charmander.sh serve` to get started.
+3. Bring up your virtual machine from the same directory you've cloned the repository to using `vagrant up`.
+4. You'll need to edit the  aws.amazon.example file and replace it with your own AWS instance information.  Be sure to include this file in .gitignore before posting changes back to Github.  Once you've made your changes, rename the file to aws-staging.json.
+5. From the directory you've cloned this repository in to, run `sh charmander.sh serve` to get started.
 
 This will start a process which monitors both Jekyll and your static assets for changes, and will automatically generate everything any time a change is made and notify your browser to refresh the page. The command line will return something like this:
 
