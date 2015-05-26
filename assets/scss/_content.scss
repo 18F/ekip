@@ -1,6 +1,20 @@
+.content {
+	@include outer-container;
+	padding-bottom: 4em;
+}
+
 .content__main-callout {
+	@include span-columns(10);
+	@include shift(1);
 	text-align: center;
-	max-width: 80%;
-	margin: 0 auto;
+	font-family: "Borgstrand Pro";
+	font-weight:normal;
 	font-size: 1.5rem;
+}
+
+.content__main-callout-header {
+	font-size: 5rem;
+	font-family: "Borgstrand Pro";
+	padding-bottom:0;
+	margin-bottom:0.25em;
 }

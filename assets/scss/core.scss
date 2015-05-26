@@ -7,8 +7,9 @@
 }
 
 $color-base: #615B5D;
-$color-highlight-one: #D9FDBF;
+$color-highlight-one: #9BC746;
 $color-highlight-two: #AEEEFF;
+$color-highlight-three: #1B6C8B;
 
 $color-sky: $color-highlight-two;
 $color-ground: $color-highlight-one;
@@ -16,3 +17,4 @@ $color-ground: $color-highlight-one;
 @import "base";
 @import "content";
 @import "objects";
+@import "buttons";

@@ -4,16 +4,21 @@ body,html {
 	padding:0;
 	margin:0;
 	height: 100%;
+	max-width:100%;
+	overflow-x: hidden;
 }
 
 .sky {
 	background: $color-sky;
 	min-height: 50%;
+	color: #B28356;
+	font-family: "Borgstrand Pro"
 }
 
 .ground {
-	min-height:10%;
+	min-height:75px;
 	width:100%;
+	max-width:100%;
 	background: $color-ground;
 	position: relative;
 }
