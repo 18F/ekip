@@ -7,11 +7,12 @@
 }
 
 $color-base: #615B5D;
-$color-highlight-one: #87A581;
-$color-highlight-two: #5DBFE1;
+$color-highlight-one: #D9FDBF;
+$color-highlight-two: #AEEEFF;
 
 $color-sky: $color-highlight-two;
-$color-grass: $color-highlight-one;
+$color-ground: $color-highlight-one;
 
 @import "base";
 @import "content";
+@import "objects";

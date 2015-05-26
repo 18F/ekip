@@ -1,3 +1,83 @@
 .object__tree {
-	
+	width: 0.75em;
+	height: 2em;
+	background-color: rgba(221, 155, 74, 0.5);
+	position: absolute;
+	&:after {
+		border-width: 0 1em 1.75em 1em;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-left-color: transparent;
+		border-bottom-color: rgba(127, 179, 219, 0.9);
+		border-style: solid;
+		display: block;
+		content: "";
+		position:absolute;
+		top:-1.2em;
+		left: -0.65em;
+	}
+	&.color-1 {
+		&:after {
+			border-bottom-color: rgba(127, 179, 219, 0.9);
+		}
+	}
+	&.color-2 {
+		&:after {
+			border-bottom-color: rgba(228, 123, 205, 0.9);
+		}
+	}
+	&.color-3 {
+		&:after {
+			border-bottom-color: rgba(220, 198, 217, 0.9);
+		}
+	}
+	&.color-4 {
+		&:after {
+			border-bottom-color: rgba(226, 130, 128, 0.9);
+		}
+	}
+	&.color-5 {
+		&:after {
+			border-bottom-color: rgba(243, 216, 171, 0.9);
+		}
+	}
+	&.color-6 {
+		&:after {
+			border-bottom-color: rgba(182, 230, 108, 0.9);
+		}
+	}
+}
+
+.object__ranger-station {
+	position:absolute;
+	margin-left: 75%;
+	z-index:10;
+	background: black;
+	height: 100%;
+
+	.building {
+		width: 4em;
+		height: 3.25em;
+		background-color: #583D22;
+		&:after {
+			border-width: 0 2.5em 2.5em 2.5em;
+			border-top-color: transparent;
+			border-right-color: transparent;
+			border-left-color: transparent;
+			border-bottom-color: lighten(#583D22, 10%);
+			border-style: solid;
+			display: block;
+			content: "";
+			position:absolute;
+			top:-2.5em;
+			left: -0.525em;
+		}
+	}
+
+	.pad {
+		width: 5em;
+		height:0.25em;
+		background-color: #583D22;
+		margin-left:-0.5em;
+	}
 }
