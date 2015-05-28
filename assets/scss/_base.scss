@@ -6,13 +6,31 @@ body,html {
 	height: 100%;
 	max-width:100%;
 	overflow-x: hidden;
+	font-family: "Avenir Next";
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Superclarendon', serif;
+	text-transform: uppercase;
+}
+
+.nav__list {
+	list-style: none;
+	text-align: right;
+	li {
+		display: inline;
+		padding-right: 1em;
+		&:last-child {
+			padding-right: 0;
+		}
+	}
 }
 
 .sky {
 	background: $color-sky;
 	min-height: 50%;
-	color: #B28356;
-	font-family: "Borgstrand Pro"
+	color: #FFF;
+	padding-bottom: 6em;
 }
 
 .ground {

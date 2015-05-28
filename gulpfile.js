@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     path = require('path'),
     batch = require('gulp-batch'),
     plumber = require('gulp-plumber'),
+    gutil = require('gulp-util'),
 
     // SCSS
     sass = require('gulp-sass'),
@@ -15,6 +16,9 @@ var gulp = require('gulp'),
     // Publishing
     s3 = require('gulp-s3');
     awspublish = require('gulp-awspublish');
+
+    //Bower
+    mainBowerFiles = require('main-bower-files');
 
 
     // Import files
@@ -40,9 +44,8 @@ gulp.task('jekyll', ['jekyll-build'], function() {
         //.pipe(uglify())
         .pipe(gulp.dest('_deploy/assets/js'));
 
-    gulp.src('bower_components/jquery/dist/jquery.min.js')
-        .pipe(plumber())
-        .pipe(gulp.dest('_deploy/assets/js'));
+    gulp.src(mainBowerFiles())
+        .pipe(gulp.dest('_deploy/assets/vendor'));
 
     gulp.src('assets/img/*')
         .pipe(plumber())
@@ -59,7 +62,10 @@ gulp.task('jekyll', ['jekyll-build'], function() {
 
 gulp.task('scss', function() {
     return gulp.src('assets/scss/*.scss')
-        .pipe(plumber())
+        .pipe(plumber(function(error) {
+            gutil.log(gutil.colors.red(error.message));
+            this.emit('end');
+        }))
         .pipe(sass())
         .pipe(gulp.dest('_deploy/assets/css'))
         .pipe(reload({stream:true}));
@@ -78,12 +84,6 @@ gulp.task('compress-js', function() {
         //.pipe(uglify())
         .pipe(gulp.dest('_deploy/assets/js'))
         .pipe(reload({stream:true}));
-});
-
-gulp.task('jquery', function() {
-    return gulp.src('bower_components/jquery/dist/jquery.min.js')
-        .pipe(plumber())
-        .pipe(gulp.dest('_deploy/assets/js'));
 });
 
 gulp.task('publish-staging', ['jekyll'], function() {
@@ -120,5 +120,6 @@ gulp.task('default', ['jekyll'], function() {
     gulp.watch('app/*/*', ['jekyll']);
     gulp.watch('assets/scss/*.scss', ['scss']);
     gulp.watch('assets/js/*.js', ['compress-js']);
+    gulp.watch('assets/img/**', ['images']);
     gulp.watch('_deploy/*.html').on("change", browserSync.reload);
 });

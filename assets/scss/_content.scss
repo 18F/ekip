@@ -1,20 +1,101 @@
 .content {
 	@include outer-container;
-	padding-bottom: 4em;
 }
 
 .content__main-callout {
 	@include span-columns(10);
 	@include shift(1);
 	text-align: center;
-	font-family: "Borgstrand Pro";
 	font-weight:normal;
 	font-size: 1.5rem;
 }
 
 .content__main-callout-header {
 	font-size: 5rem;
-	font-family: "Borgstrand Pro";
 	padding-bottom:0;
 	margin-bottom:0.25em;
+}
+
+.content__ticket-container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.content__ticket {
+	@include fill-parent();
+	@include row(table);
+	font-weight:normal;
+	background: #fff;
+	border: 0.5em solid #fff;
+	margin-bottom:0;
+	padding-bottom:0;
+	height:270px;
+}
+
+.content__ticket-image {
+	@include span-columns(3);
+	@include pad();
+	background: url('/assets/img/ticket-1.png');
+	background-size: cover;
+	height:200px;
+	background-repeat: no-repeat;
+	img {
+		width:100%;
+	}
+}
+
+.content__ticket-title {
+	@include span-columns(3);
+	@include pad();
+	background: #AB5C36;
+	font-family: 'Superclarendon', serif;
+	text-transform:uppercase;
+	text-align:center;
+	color: #fff;
+	span {
+		display: block;
+		&.interstitial {
+			font-size: 1em;
+			padding-bottom:0.25em;
+		}
+		&.highlight {
+			font-size: 3.25em;
+			line-height: 0.8em;
+		}
+	}
+}
+
+.content__ticket-title-text {
+	position: relative;
+	top:1.5em;
+}
+
+.content__ticket-details {
+	@include span-columns(4);
+	@include reset-display;
+	@include pad();
+	background: #7EAFB4;
+
+	p {
+		color: #fff;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding-bottom:0;
+		margin-bottom:0.25em;
+	}
+	span {
+		font-family: "Lucida Console", Monaco, monospace;
+		color: #222;
+		font-weight: normal;
+	}
+	.content__ticket-details-fill-blank {
+		background: white;
+		display: inline-block;
+		width: 100%;
+		height: 2em;
+	}
+
+	.ticket__barcode {
+		margin-top:1em;
+	}
 }
