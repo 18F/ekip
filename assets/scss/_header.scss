@@ -1,0 +1,39 @@
+.header {
+	@include outer-container;
+	padding-top: 1em;
+	max-width: 95%;
+	margin:0 auto;
+	margin-bottom: 3em;
+
+	@include media($medium) {
+		@include outer-container();
+	}
+
+	a {
+		color: #fff;
+	}
+}
+
+.header__title {
+	@include span-columns(6);
+	font-family: "Avenir Next";
+	font-weight: 500;
+	text-transform: lowercase;
+	display:none; 
+
+	@include media($small) {
+		display: block;
+	}
+}
+
+.header__nav {
+	@include span-columns(6); 
+	display:none;
+
+	@include media($small) {
+		display: block;
+	}
+}
+
+.header__nav-list {
+}

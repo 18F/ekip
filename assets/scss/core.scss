@@ -5,3 +5,20 @@
 .default-ul {
 	@extend %default-ul;
 }
+
+$color-base: #4A3B15;
+$color-highlight-three: #1B6C8B;
+
+$color-sky: #3A7293;
+$color-ground: #566C34;
+
+$x-small: new-breakpoint(min-width 560px 12);
+$small: new-breakpoint(min-width 730px 12);
+$medium: new-breakpoint(min-width 1130px 12);
+
+@import "base";
+@import "header";
+@import "footer";
+@import "content";
+@import "objects"; 
+@import "buttons";

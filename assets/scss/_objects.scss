@@ -1,0 +1,502 @@
+.object__tree {
+	width: 0.75em;
+	height: 2em;
+	background-color: rgba(221, 155, 74, 0.5);
+	position: absolute;
+	&:after {
+		border-width: 0 1em 1.75em 1em;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-left-color: transparent;
+		border-bottom-color: rgba(127, 179, 219, 0.9);
+		border-style: solid;
+		display: block;
+		content: "";
+		position:absolute;
+		top:-1.2em;
+		left: -0.65em;
+	}
+	&.color-1 {
+		&:after {
+			border-bottom-color: rgba(127, 179, 219, 0.9);
+		}
+	}
+	&.color-2 {
+		&:after {
+			border-bottom-color: rgba(228, 123, 205, 0.9);
+		}
+	}
+	&.color-3 {
+		&:after {
+			border-bottom-color: rgba(220, 198, 217, 0.9);
+		}
+	}
+	&.color-4 {
+		&:after {
+			border-bottom-color: rgba(226, 130, 128, 0.9);
+		}
+	}
+	&.color-5 {
+		&:after {
+			border-bottom-color: rgba(243, 216, 171, 0.9);
+		}
+	}
+	&.color-6 {
+		&:after {
+			border-bottom-color: rgba(182, 230, 108, 0.9);
+		}
+	}
+}
+
+.object__mountain {
+	position:absolute;
+	bottom: 0em;
+	z-index:10;
+	.mountainside-right {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 200px 0 0 200px;
+		border-color: transparent transparent transparent #39557A;
+		-webkit-transform:rotate(360deg);
+		float:left;
+	}
+	.mountainside-left {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 200px 200px;
+		border-color: transparent transparent #1B6C8B transparent;
+		-webkit-transform:rotate(360deg);
+		float:left;
+	}
+	.mountainside-slope-left {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 200px 200px;
+		border-color: transparent transparent #1B6C8B transparent;
+		-webkit-transform:rotate(360deg);
+		position:absolute;
+		bottom: 0;
+		left: 1em;
+	}
+
+	&.object__mountain__alpha {
+		right: -10em;
+	}
+	&.object__mountain__bravo {
+		right: 2em;
+		.mountainside-right {
+			border-width: 150px 0 0 150px;
+		}
+		.mountainside-left {
+			border-width: 0 0 150px 150px;
+		}
+		.mountainside-slope-left {
+			border-width: 0 0 100px 50px;
+		}
+	}
+
+	&.object__mountain__charlie {
+		right: 2em;
+		bottom: 3em;
+		z-index:0;
+		.mountainside-right {
+			border-width: 100px 0 0 100px;
+		}
+		.mountainside-left {
+			border-width: 0 0 100px 100px;
+		}
+	}
+}
+
+.object__ranger-station {
+	position:absolute;
+	margin-left: 65%;
+	bottom: 0;
+	z-index:10;
+	height: auto;
+	bottom: 1em;
+
+	.building {
+		width: 3.5em;
+		height: 2em;
+		background-color: lighten(#583D22, 10%);
+		margin: 0 auto;
+		margin-top: 1em;
+		&:after {
+			border-width: 0 2.5em 2em 2.5em;
+			border-top-color: transparent;
+			border-right-color: transparent;
+			border-left-color: transparent;
+			border-bottom-color: lighten(#583D22, 10%);
+			border-style: solid;
+			display: block;
+			content: "";
+			position:absolute;
+			top:-1em;
+			left: -0.025em;
+		}
+	}
+
+	.chimney {
+		display: block;
+		height: 1em;
+		width: 0.75em;
+		background: lighten(#583D22, 10%);
+		position: absolute;
+		top: -0.75em;
+		right: 1.2em;
+	}
+
+	.door {
+		display:block;
+		height: 1.5em;
+		width: 1em;
+		background: #583D22;
+		position:absolute;
+		top: 1.5em;
+		left: 2em;
+	}
+
+	.pad {
+		width: 5em;
+		height:0.25em;
+		background-color: #583D22;
+	}
+}
+
+/* Smoke container */
+.smoke {
+  position: absolute;
+  z-index: 3;
+  width: 1em;
+  height: 160px;
+  left: 3.5em;
+  bottom: 3.5em;
+}
+
+/* smoke balls */
+.smoke span {
+  display: block;
+  position: absolute;
+  bottom: -1em;
+  height: 0;
+  width: 0;
+  border: 2em solid #fff;
+  border-radius: 2em;
+  left: -2em;
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+/* Smoke animation */
+@-webkit-keyframes smokeL {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(1) translate(-20px, -130px);
+    -ms-transform: scale(1) translate(-20px, -130px);
+    -webkit-transform: scale(1) translate(-20px, -130px);
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+@-moz-keyframes smokeL {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(1) translate(-20px, -130px);
+    -ms-transform: scale(1) translate(-20px, -130px);
+    -webkit-transform: scale(1) translate(-20px, -130px);
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+@-o-keyframes smokeL {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(1) translate(-20px, -130px);
+    -ms-transform: scale(1) translate(-20px, -130px);
+    -webkit-transform: scale(1) translate(-20px, -130px);
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+@keyframes smokeL {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(1) translate(-20px, -130px);
+    -ms-transform: scale(1) translate(-20px, -130px);
+    -webkit-transform: scale(1) translate(-20px, -130px);
+    transform: scale(1) translate(-20px, -130px);
+  }
+}
+@-webkit-keyframes smokeR {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(1) translate(20px, -130px);
+    -ms-transform: scale(1) translate(20px, -130px);
+    -webkit-transform: scale(1) translate(20px, -130px);
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+@-moz-keyframes smokeR {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(1) translate(20px, -130px);
+    -ms-transform: scale(1) translate(20px, -130px);
+    -webkit-transform: scale(1) translate(20px, -130px);
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+@-o-keyframes smokeR {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(1) translate(20px, -130px);
+    -ms-transform: scale(1) translate(20px, -130px);
+    -webkit-transform: scale(1) translate(20px, -130px);
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+@keyframes smokeR {
+  0% {
+    -moz-transform: scale(0.2) translate(0, 0);
+    -ms-transform: scale(0.2) translate(0, 0);
+    -webkit-transform: scale(0.2) translate(0, 0);
+    transform: scale(0.2) translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    -moz-transform: scale(0.2) translate(0, -5px);
+    -ms-transform: scale(0.2) translate(0, -5px);
+    -webkit-transform: scale(0.2) translate(0, -5px);
+    transform: scale(0.2) translate(0, -5px);
+  }
+  100% {
+    opacity: 0;
+    -moz-transform: scale(1) translate(20px, -130px);
+    -ms-transform: scale(1) translate(20px, -130px);
+    -webkit-transform: scale(1) translate(20px, -130px);
+    transform: scale(1) translate(20px, -130px);
+  }
+}
+.smoke .s0 {
+  -webkit-animation: smokeL 13.5s 0s infinite;
+  -moz-animation: smokeL 13.5s 0s infinite;
+  -o-animation: smokeL 13.5s 0s infinite;
+  animation: smokeL 13.5s 0s infinite;
+}
+
+.smoke .s1 {
+  -webkit-animation: smokeR 13.5s 1.5s infinite;
+  -moz-animation: smokeR 13.5s 1.5s infinite;
+  -o-animation: smokeR 13.5s 1.5s infinite;
+  animation: smokeR 13.5s 1.5s infinite;
+}
+
+.smoke .s2 {
+  -webkit-animation: smokeL 13.5s 3s infinite;
+  -moz-animation: smokeL 13.5s 3s infinite;
+  -o-animation: smokeL 13.5s 3s infinite;
+  animation: smokeL 13.5s 3s infinite;
+}
+
+.smoke .s3 {
+  -webkit-animation: smokeR 13.5s 4.5s infinite;
+  -moz-animation: smokeR 13.5s 4.5s infinite;
+  -o-animation: smokeR 13.5s 4.5s infinite;
+  animation: smokeR 13.5s 4.5s infinite;
+}
+
+.smoke .s4 {
+  -webkit-animation: smokeL 13.5s 6s infinite;
+  -moz-animation: smokeL 13.5s 6s infinite;
+  -o-animation: smokeL 13.5s 6s infinite;
+  animation: smokeL 13.5s 6s infinite;
+}
+
+.smoke .s5 {
+  -webkit-animation: smokeR 13.5s 7.5s infinite;
+  -moz-animation: smokeR 13.5s 7.5s infinite;
+  -o-animation: smokeR 13.5s 7.5s infinite;
+  animation: smokeR 13.5s 7.5s infinite;
+}
+
+.smoke .s6 {
+  -webkit-animation: smokeL 13.5s 9s infinite;
+  -moz-animation: smokeL 13.5s 9s infinite;
+  -o-animation: smokeL 13.5s 9s infinite;
+  animation: smokeL 13.5s 9s infinite;
+}
+
+.smoke .s7 {
+  -webkit-animation: smokeR 13.5s 10.5s infinite;
+  -moz-animation: smokeR 13.5s 10.5s infinite;
+  -o-animation: smokeR 13.5s 10.5s infinite;
+  animation: smokeR 13.5s 10.5s infinite;
+}
+
+.smoke .s8 {
+  -webkit-animation: smokeL 13.5s 12s infinite;
+  -moz-animation: smokeL 13.5s 12s infinite;
+  -o-animation: smokeL 13.5s 12s infinite;
+  animation: smokeL 13.5s 12s infinite;
+}
+
+.smoke .s9 {
+  -webkit-animation: smokeR 13.5s 13.5s infinite;
+  -moz-animation: smokeR 13.5s 13.5s infinite;
+  -o-animation: smokeR 13.5s 13.5s infinite;
+  animation: smokeR 13.5s 13.5s infinite;
+}
+
+.object__buffalo {
+	display:block;
+	left: 10em;
+	position: relative;
+	top:2em;
+
+	.object__buffalo-body {
+		display:block;
+		width:0;
+		height:0;
+		border-style: solid;
+		top: 0em;
+		border-width: 0 0 0.8em 1.9em;
+		border-color: transparent transparent #682817 transparent;
+		-webkit-transform:rotate(360deg);
+		position:absolute;
+	}
+	.object__buffalo-neck {
+		display:block;
+		width:0;
+		height:0;
+		border-style: solid;
+		left: 1.9em;
+		border-width: 0 1em 1.5em 0;
+		border-color: transparent transparent #491C0B transparent;
+		-webkit-transform:rotate(360deg);
+		position: absolute;
+	}
+	.object__buffalo-head {
+		display:block;
+		width:0;
+		height:0;
+		border-style: solid;
+		left: 1.9em;
+		top:1.5em;
+		border-width: 0.75em 0.5em 0 0.5em;
+		border-color: #491C0B transparent transparent transparent;
+		-webkit-transform:rotate(360deg);
+		position: absolute;
+	}
+	.object__buffalo-upper-thigh {
+		display:block;
+		width:2em;
+		height:0.5em;
+		left: 0em;
+		top:0.75em;
+		background: #491C0B;
+		position: absolute;
+	}
+	.object__buffalo-thigh {
+		display:block;
+		width:0;
+		height:0;
+		border-style: solid;
+		left: 0em;
+		top:1.25em;
+		border-width: 0 2em 0.5em 0;
+		border-color: transparent #491C0B transparent transparent;
+		-webkit-transform:rotate(360deg);
+		position: absolute;
+	}
+}

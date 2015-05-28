@@ -2,11 +2,32 @@
 layout: default
 title: Your Ticket!
 custom_js:
+  - barcode.js
   - ticket.js
 ---
 
-<h1>Your Ticket</h1>
+<div class="content content__main-callout">
+	<h2 class="content content__main-callout-header">Your Ticket!</h2>
+
+	<p>Way to go! You have gotten a free ticket to visit America's National Parks! Below is your Golden Ticket.</p>
+</div>
+
+<div class="content content__ticket-container">
+	<div class="content__ticket">
+		<div class="content__ticket-image"></div>
+		<div class="content__ticket-title">
+			<p class="content__ticket-title-text">
+				<span class="interstitial">Every</span><span class="highlight">kid</span><span class="interstitial">in a</span><span class="highlight">park</span>
+			</p>
+		</div>
+		<div class="content__ticket-details">
+			<p>Name: <span class="content__ticket-details-fill-blank"></span></p>
+			<p>Valid For: <span class="content__ticket-details-fill">Any National Park</span></p>
+			<p>Expiration: <span class="content__ticket-details-fill">August 30, 2016</span></p>
+			<div class="ticket__record-locator" data-endpoint="{{ site.ticket_generator_endpoint }}"><span class="default_id">4851244</span><img alt="barcode" class="ticket__barcode"></div>
+		</div>
+	</div>
+</div>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<div class="ticket__record-locator" data-endpoint="{{ site.ticket_generator_endpoint }}">4851244</div>

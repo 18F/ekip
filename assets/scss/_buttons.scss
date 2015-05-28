@@ -1,0 +1,16 @@
+.button {
+	background: $color-highlight-three;
+	color: #fff;
+	padding: 0.75rem;
+	display: inline-block;
+	&:hover {
+		background: lighten($color-highlight-three, 5%);
+		color: #fff;
+	}
+}
+
+.button + .button__underscore {
+	display: block;
+	font-style: sans-serif;
+	font-size: 1rem;
+}
