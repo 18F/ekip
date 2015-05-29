@@ -1,16 +1,8 @@
-function drawTrees() {
-	
-	var numberOfTrees = 100;
-	var treeContainer = $('.object__forest')
+var numberOfTrees = 15;
 
+var forest = $('.object__forest');
+var tree = $('.object__tree').first();
 
-	for (i = 0; i < numberOfTrees; i++) {
-		var treeColor = Math.floor(Math.random()*(6-1+1)+1);
-		var tree = $('<div class="object__tree color-' + treeColor + '""></div>')
-    	treeContainer.append(tree);
-	}
+for(var i = 0; i < numberOfTrees; i++) {
+    $(tree).clone().appendTo(forest);
 }
-
-$(document).ready(function() {
-	drawTrees();
-});
