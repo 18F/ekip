@@ -9,5 +9,11 @@ $(document).ready(function() {
 	}).done(function(data) {
 		$(recordLocator).find('.default_id').remove();
 		$(recordLocator).find("img").JsBarcode(data['record_locators'][0],{format:"CODE128",displayValue:true,fontSize:20, height:40});
-	});
+	})
+	.fail(function() {
+		console.log('fail');
+		var defaultID = $(recordLocator).find('.default_id').text();
+		$(recordLocator).find('.default_id').remove();
+    	$(recordLocator).find("img").JsBarcode(defaultID,{format:"CODE128",displayValue:true,fontSize:20, height:40});
+  	});
 });

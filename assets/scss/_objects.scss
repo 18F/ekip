@@ -1,8 +1,15 @@
+.object__forest {
+  width: 100%;
+  white-space: nowrap;
+}
+
 .object__tree {
 	width: 0.75em;
 	height: 2em;
 	background-color: rgba(221, 155, 74, 0.5);
-	position: absolute;
+	position: relative;
+  display: inline-block;
+  margin-left: 2em;
 	&:after {
 		border-width: 0 1em 1.75em 1em;
 		border-top-color: transparent;
@@ -16,6 +23,22 @@
 		top:-1.2em;
 		left: -0.65em;
 	}
+  &:nth-child(2n) {
+    margin-left: 3em;
+    top: 10px;
+  }
+  &:nth-child(3n) {
+    margin-left: 2.5em;
+    top: 15px;
+  }
+  &:nth-child(4n) {
+    margin-left: 4em;
+    top: 10px;
+  }
+  &:nth-child(5n) {
+    margin-left: 4em;
+    top: 20px;
+  }
 	&.color-1 {
 		&:after {
 			border-bottom-color: rgba(127, 179, 219, 0.9);
