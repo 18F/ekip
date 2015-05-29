@@ -27,12 +27,12 @@ h1,h2,h3,h4,h5,h6 {
 .sky {
 	background: $color-sky;
 	min-height: 50%;
-	color: #FFF;
+	color: #222;
 	padding-bottom: 6em;
 }
 
 .ground {
-	min-height:75px;
+	height:200px;
 	width:100%;
 	max-width:100%;
 	background: $color-ground;
