@@ -4,10 +4,12 @@ rvm:
     - 2.1
 install:
     - gem install jekyll
-before_script:
     - npm install --global gulp
     - npm install --save-dev gulp
     - npm install --global bower
+before_script:
+    - bower install
+    - npm install
 script:
     - gulp jekyll
 deploy:
