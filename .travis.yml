@@ -15,6 +15,7 @@ deploy:
   edge: true
   provider: cloudfoundry
   api: https://api.18f.gov
+  skip_cleanup: true
   username: shashank.khandelwal@gsa.gov
   password:
     secure: ugfksZDvcUQb5Y9tbEyItnMOwYITyM8zqF6HqdYp+ukiyvkFnkNOxY6C5oCWknidvMHIAyAP/1XPTu/pswdcPKnLSF45ThP+Mw23YZGUmzl1SDF9aGwWjFQRKFoUhWhIVlh8Pdxvjw+0FULQlS4CCSr3U24E51yZdOQrrB+cAsV4syz/KCVboF6TH9i8PZs8b3m5QxDF1kup4EYFkk2gmpOvjOsoty8cY3JFEKSHXlHqU5vjqgupVQX1XfBZkIK5CG/iTmDTmQL4B505rlfOeXaJg5j0dvm2EqkWJULzhtIh+6LjaV0XD1g4n1ixwQrrYcaAUlHFsC6+scv1Fl8iJ/K/Sdr6/Mkq0XbxwqGglatWBfWNRJeHAvAiUBholmQJIgbj4kBWbMwKC09oYqcZyY2OMMOvvVX0HGTCGcGM43aV+aWzy83C+XZpEL6VFh4wicpMxo/MS5jBYhC/d7SB7Fw6RlQCzfvGkN2hysbID3Y6v+A1ULSgmq9nC5DzjMkaoz/rI50KpAQlrN4P42JJL2xvXiEmb6600tDOjJ4LRgdwsE+ZwC+7uZPBn/GU8DxmxMmEXGa9GtFShWhxzSCaTenDX8lvDNX1PyS1QtKxgbHi1y6CCCOXcfRrWAPp0pidf2x98BdWroGBssSjhD9EHDjzlA8DiTchl069f3l8qkc=
