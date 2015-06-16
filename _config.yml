@@ -1,5 +1,7 @@
 # Site settings
 
+exclude: [vendor]
+
 # Title of the site
 title: "Every Kid in a Park"
 base_url: "http://ekip-staging.18f.gov"
