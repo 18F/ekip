@@ -11,6 +11,7 @@ before_script:
     - npm install
 script:
     - gulp jekyll
+sudo: required
 deploy:
   edge: true
   provider: cloudfoundry
