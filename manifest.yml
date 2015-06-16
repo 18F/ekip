@@ -1,6 +1,6 @@
 ---
 applications:
- - name: site-a
-    memory: 64M
-    instances: 1
-    buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
+ - name: site-b
+   memory: 64M
+   instances: 1
+   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
