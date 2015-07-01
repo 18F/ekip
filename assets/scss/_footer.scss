@@ -1,3 +1,26 @@
+footer {
+	margin: 50px 0 0 0;
+	clear: both;
+
+	nav {
+		text-align: center;
+
+		ul {
+			margin: 0 0 15px 0;
+
+			li {
+				border-right: 1px solid #fff;
+				padding: 0 15px;
+				display: inline-block;
+
+				&:last-child {
+					border: none;
+				}
+			}
+		}
+	}
+}
+
 .footer {
 	margin:0 auto;
 	margin-top: 2em;
@@ -24,7 +47,7 @@
 	}
 
 	.footer__national-park-service_logo {
-		
+
 		margin-right:1em;
 		@include span-columns(3 of 12);
 		min-width:75px;
@@ -49,7 +72,7 @@
 		@include span-columns(6);
 		text-align:right;
 	}
-	
+
 	p {
 		padding-bottom:0.5em;
 		border-bottom: 1px solid rgba(255,255,255,0.2);

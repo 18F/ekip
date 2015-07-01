@@ -16,4 +16,5 @@ $(document).ready(function() {
 		$(recordLocator).find('.default_id').remove();
     	$(recordLocator).find("img").JsBarcode(defaultID,{format:"CODE128",displayValue:true,fontSize:20, height:40});
   	});
+
 });
