@@ -196,8 +196,13 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', '{{ site.google_analytics_id }}', 'auto');
 ga('set', 'anonymizeIp', true);
+ga('set', 'forceSSL', true);
 ga('send', 'pageview');
 </script>
 {% endif %}
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=DOI"></script>
+
 </body>
 </html>
